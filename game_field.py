@@ -2,6 +2,7 @@ import random
 import pygame
 import consts
 grid=[]
+t=1
 
 def create_screen():
     for i in range(consts.height):
