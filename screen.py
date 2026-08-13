@@ -11,4 +11,5 @@ def background_1():
             if event.type == pygame.QUIT:
                 running = False
 
+
 background_1()
