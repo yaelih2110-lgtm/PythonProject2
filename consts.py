@@ -5,8 +5,7 @@ GRASS='grass.png'
 MAIN='main.png'
 LOSE_MESSAGE = "You Lost!"
 BLACK = (0, 0, 0)
-x=0
-y=0
+
 # LOSE_FONT_SIZE = int(0.15 * WINDOW_WIDTH)
 # LOSE_COLOR = BLACK
 # LOSE_LOCATION = \
