@@ -10,24 +10,16 @@ def create_screen():
             grid[i].append(['EMPTY'])
     return grid
 
-
-def grass(grid):
-    for i in range(20):
-        x=random.choice(consts.height)
-        y=random.choice(consts.width)
-        if grid[x][y]=='EMPTY' or  grid[x][y]=='mine':
-            grid[x][y]='grass'
-    return grid
 def mines(grid):
     for i in range(20):
-        x = random.choice(consts.height)
-        y = random.choice(consts.width)
-        if grid[x][y] == 'EMPTY' or grid[x][y]= 'grass':
-            grid[x][y]='mine'
+        x = random.choice(range(consts.height))
+        y = random.choice(range(consts.width))
+        if grid[x][y] == ['EMPTY']:
+            grid[x][y]=['mine']
     return grid
-
-create_screen()
-grass(grid)
-mines(grid)
-for row in range(25):
-    print(grid[row])
+def print_grid(grid):
+    create_screen()
+    mines(grid)
+    for row in range(25):
+        print(grid[row])
+print_grid(grid)
