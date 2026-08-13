@@ -11,3 +11,5 @@ def background_color1():
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 running = False
+
+background_color1()
