@@ -1,3 +1,6 @@
+from os import remove
+from symbol import continue_stmt
+
 import pygame
 pygame.init()
 KEY_PRESSED = pygame.key.get_pressed()
@@ -16,6 +19,9 @@ def background_green():
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 running = False
+        if KEY_PRESSED[pygame.K_KP_ENTER]:
+            running = False
+
 
 green1 = (1, 59, 0)
 def background_night():
@@ -37,9 +43,6 @@ def background_night():
                 running = False
 
 
-
-
 background_green()
-if KEY_PRESSED[pygame.K_RETURN]:
-    #print(56)
-    background_night()
+background_night()
+if KEY_PRESSED[pygame.K_KP_ENTER]:
