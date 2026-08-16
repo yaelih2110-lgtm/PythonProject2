@@ -3,11 +3,13 @@ import pygame
 BACKGROUND_COLOR=(34,139,34)
 WINDOW_HEIGHT = 625
 WINDOW_WIDTH =1250
-grass='grass.png'
-GRASS=pygame.transform.scale(pygame.image.load(grass), (3*(WINDOW_WIDTH/50), WINDOW_HEIGHT/25))
+grass=pygame.image.load('grass.png')
+GRASS=pygame.transform.scale(grass, (2*(WINDOW_WIDTH/50), 2*(WINDOW_HEIGHT/25)))
+flag=pygame.image.load('flag.png')
+FLAG=pygame.transform.scale(flag, (4*(WINDOW_WIDTH/50),3*WINDOW_HEIGHT/25))
 MAIN='main.png'
 soldier=pygame.image.load('soldier.png')
-soldier_size=pygame.transform.scale(soldier,50,100)
+soldier_size=pygame.transform.scale(soldier,(2*(WINDOW_WIDTH/50),4*(WINDOW_HEIGHT/25)))
 SOLDIER_INITIAL_PLACE=pygame.Rect((0,0),(2*(WINDOW_WIDTH/50),4*(WINDOW_HEIGHT/25)))
 LOSE_MESSAGE = "You Lost!"
 BLACK = (0, 0, 0)
