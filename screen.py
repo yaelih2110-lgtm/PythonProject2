@@ -1,26 +1,32 @@
-from os import remove
-from symbol import continue_stmt
-
+import random
 import pygame
-pygame.init()
-KEY_PRESSED = pygame.key.get_pressed()
+import consts
+from consts import GRASS, SOLDIER_INITIAL_PLACE
 
-from PythonProject2.consts import WINDOW_HEIGHT
-
-
-def background_green():
-    background_colour = (0,100,0)
-    screen = pygame.display.set_mode((1250, 625))
-    pygame.display.set_caption("The Flag")
-    screen.fill(background_colour)
-    pygame.display.flip()
-    running = True
-    while running:
-        for event in pygame.event.get():
-            if event.type == pygame.QUIT:
-                running = False
-        if KEY_PRESSED[pygame.K_KP_ENTER]:
-            running = False
+def background_1():
+   background_colour = (0,100,0)
+   screen = pygame.display.set_mode((consts.WINDOW_WIDTH,consts.WINDOW_HEIGHT))
+   pygame.display.set_caption("The Flag")
+   screen.fill(background_colour)
+   screen.blit(consts.FLAG, (1150,550))
+   x_list=[]
+   y_list=[]
+   for i in range (20):
+       while True:
+           x=random.choice(range(consts.WINDOW_WIDTH-50))
+           y=random.choice(range(consts.WINDOW_HEIGHT-50))
+           if x not in x_list and y not in y_list:
+               x_list.append(x)
+               y_list.append(y)
+               break
+       screen.blit(GRASS, (x,y))
+   pygame.display.flip()
+   running = True
+   while running:
+       for event in pygame.event.get():
+           if event.type == pygame.QUIT:
+               running = False
+background_1()
 
 
 green1 = (1, 59, 0)
@@ -43,6 +49,9 @@ def background_night():
                 running = False
 
 
+
+
 background_green()
-background_night()
-if KEY_PRESSED[pygame.K_KP_ENTER]:
+if KEY_PRESSED[pygame.K_RETURN]:
+    #print(56)
+    background_night()
